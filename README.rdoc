@@ -2,7 +2,7 @@
 
 Ambassador API wrapper for Ruby.
 
-This is a lightweight Ruby wrapper for the <a href="https://getambassador.com/">ambassador</a> API.
+This is a lightweight Ruby wrapper for the [Ambassador](http://getambassador.com) API.
 
 ### Installation
 
@@ -16,12 +16,13 @@ $ gem install mbsy
 
 Simply require this library before you use it:
 
-``` ruby
+```ruby
 require 'mbsy'
 ```
 
 If you're using Rails 3.x, you could include this gem in your Gemfile.
-``` ruby
+
+```ruby
 gem 'mbsy'
 ```
 
@@ -30,14 +31,14 @@ $ bundle install
 
 If you're using Rails 2 you could include this gem in your configuration, i.e. in `environment.rb`
 
-``` ruby
+```ruby
 config.gem 'mbsy'
 ```
 ### Initialise
 
 Make sure you include your api credentials in an initialiser.
 
-``` ruby
+```ruby
 Mbsy.configure do |c|
 	c.api_key 'MY_API_KEY'
 	c.user_name 'MY_USER_NAME'
