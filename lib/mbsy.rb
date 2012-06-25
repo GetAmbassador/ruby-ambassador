@@ -1,3 +1,5 @@
+require 'httparty'
+require 'json'
 require 'mbsy/resources/base'
 require 'mbsy/resources/ambassador'
 require 'mbsy/resources/balance'
@@ -7,10 +9,6 @@ require 'mbsy/resources/shortcode'
 require 'mbsy/resources/social'
 
 module Mbsy
-  def self.log(msg)
-    Rails.logger.info("[Ambassador] #{msg}")
-  end
-  
   class << self
     attr_accessor :api_key, :user_name
     def configure

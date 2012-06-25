@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name    = 'mbsy'
   s.version = '1.0.0'
   s.date    = '2012-06-10'
-  s.summary = 'A Ruby API wrapper for Ambassador'
+  s.summary = 'A Ruby wrapper for Ambassador API'
   s.description = ''
   s.author = 'Tom Mullen'
   s.email = 'tom@zappdrewards.com'
@@ -21,5 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('faker', '~> 1.0.1')
   s.add_development_dependency('rb-fsevent', '~> 0.4.2')
   s.add_development_dependency("shoulda", ">= 0")
-  s.add_development_dependency("bundler", "~> 1.0.0")
+  s.add_development_dependency("bundler", "~> 1.1.1")
+  s.add_development_dependency('httparty', '~> 0.8.3')
+  s.add_development_dependency('json', '~> 1.7.3')
 end

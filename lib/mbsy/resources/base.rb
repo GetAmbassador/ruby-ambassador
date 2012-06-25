@@ -1,7 +1,3 @@
-require 'httparty'
-require 'json'
-require 'cgi'
-
 module Mbsy
   class Base
     include HTTParty
@@ -15,7 +11,6 @@ module Mbsy
  
     def self.call(method, params = {})
       api_url = Mbsy.site_uri + self.element_name + '/' + method
-      Mbsy.log(api_url)
       
       response = JSON.parse(self.get(api_url, :query => params).body)['response']
 

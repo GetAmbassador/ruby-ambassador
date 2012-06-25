@@ -61,7 +61,11 @@ The mbsy gem will give you access to classes such as:
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+### To Do
+
+Finish of test suite.
+
+### Copyright
 
 Copyright (c) 2012 Tom Mullen. See LICENSE.txt for
 further details.

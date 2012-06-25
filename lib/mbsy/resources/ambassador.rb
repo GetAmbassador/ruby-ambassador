@@ -3,16 +3,16 @@ module Mbsy
     
     def self.find(params={})
       raise ArgumentError, "You must include :email" unless params[:email]
-      call('get', params.reverse_merge(:auto_create => '0'))
-    end
-    
-    def self.find_or_create(params={})
-      raise ArgumentError, "You must include :email" unless params[:email]
       call('get', params)
     end
     
-    def self.search(params={})
+    def self.all(params={})
       call('all', params)
+    end
+    
+    def self.stats(params={})
+      raise ArgumentError, "You must include :email" unless params[:email]
+      call('stats', params)
     end
     
   end
