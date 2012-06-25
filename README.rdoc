@@ -1,8 +1,56 @@
-= mbsy
+# mbsy
 
-Description goes here.
+Ambassador API wrapper for Ruby.
 
-== Contributing to mbsy
+This is a lightweight Ruby wrapper for the <a href="https://getambassador.com/">ambassador</a> API.
+
+### Installation
+
+This library can be installed as a gem. It is hosted on [Rubygems](http://rubygems.org).
+
+You can install this library as a gem using the following command:
+
+$ gem install mbsy
+
+### Usage
+
+Simply require this library before you use it:
+
+``` ruby
+require 'mbsy'
+```
+
+If you're using Rails 3.x, you could include this gem in your Gemfile.
+``` ruby
+gem 'mbsy'
+```
+
+Install the gem using the following command:
+$ bundle install
+
+If you're using Rails 2 you could include this gem in your configuration, i.e. in `environment.rb`
+
+``` ruby
+config.gem 'mbsy'
+```
+### Initialise
+
+Make sure you include your api credentials in an initialiser.
+
+``` ruby
+Mbsy.configure do |c|
+	c.api_key 'MY_API_KEY'
+	c.user_name 'MY_USER_NAME'
+end
+```
+
+The mbsy gem will give you access to classes such as:
+
+* `Mbsy::Company`  
+* `Mbsy::Ambassador`  
+* `Mbsy::Shortcode`
+
+### Contributing to mbsy
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
