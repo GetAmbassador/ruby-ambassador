@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.name    = 'mbsy'
-  s.version = '1.0.0'
-  s.date    = '2012-06-10'
-  s.summary = 'A Ruby wrapper for Ambassador API'
+  s.version = '1.0.1'
+  s.date    = '2013-02-22'
+  s.summary = 'A Ruby wrapper for the Ambassador API'
   s.description = ''
-  s.author = 'Tom Mullen'
-  s.email = 'tom@zappdrewards.com'
-  s.homepage = 'http://github.com/temullen/mbsy'
+  s.author = 'Tom Mullen, Chase Lee'
+  s.email = 'support@getambassador.com'
+  s.homepage = 'http://github.com/GetAmbassador/mbsy'
   
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
