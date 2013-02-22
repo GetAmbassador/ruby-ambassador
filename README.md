@@ -40,8 +40,8 @@ Make sure you include your api credentials in an initialiser.
 
 ```ruby
 Mbsy.configure do |c|
-	c.api_key 'MY_API_KEY'
-	c.user_name 'MY_USER_NAME'
+	c.api_key = 'MY_API_KEY'
+	c.user_name = 'MY_USER_NAME'
 end
 ```
 
@@ -50,6 +50,23 @@ The mbsy gem will give you access to classes such as:
 * `Mbsy::Company`  
 * `Mbsy::Ambassador`  
 * `Mbsy::Shortcode`
+
+Some examples:
+
+```ruby
+# Add 50 to user account
+Mbsy::Balance.update(:add,{:email => 'example@example.com', :amount => 50})
+
+# Deduct 25 from user account
+Mbsy::Balance.update(:deduct,{:email => 'example@example.com', :amount => 25})
+
+# Get company details
+Mbsy::Company.get_details
+
+# Register a revenue event for an ambassador
+Mbsy::Event.create({:email => 'example@example.com', :revenue => 120, :campaign_uid => YOURCAMPAIGNUID})
+
+```
 
 ### Contributing to mbsy
  
