@@ -6,7 +6,7 @@ This is a lightweight Ruby wrapper for the [Ambassador](http://getambassador.com
 
 ### Installation
 
-This library can be installed as a gem. It is hosted on [Rubygems](http://rubygems.org).
+This library can be installed as a gem. It is hosted on [Rubygems](https://rubygems.org/gems/mbsy).
 
 You can install this library as a gem using the following command:
 
@@ -58,7 +58,7 @@ The mbsy gem will give you access to classes such as:
 * Fork the project.
 * Start a feature/bugfix branch.
 * Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Make sure to add tests for it. This is important so we don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 ### To Do
