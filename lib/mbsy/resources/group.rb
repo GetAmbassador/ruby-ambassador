@@ -2,7 +2,7 @@ module Mbsy
   class Group < Base
     
     def self.find(params={})
-      raise ArgumentError, "You must include :email" unless params[:email]
+      raise ArgumentError, "You must include :group_id" unless params[:group_id]
       call('get', params)
     end
     
