@@ -19,9 +19,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency('factory_girl', '~> 2.1.0')
   s.add_development_dependency('fakeweb', '~> 1.3.0')
   s.add_development_dependency('faker', '~> 1.0.1')
-  s.add_development_dependency('rb-fsevent', '~> 0.4.2')
+  s.add_development_dependency('rb-fsevent', '~> 0.9.3')
   s.add_development_dependency("shoulda", ">= 0")
   s.add_development_dependency("bundler", "~> 1.1.1")
   s.add_development_dependency('httparty', '~> 0.8.3')
   s.add_development_dependency('json', '~> 1.7.3')
+  s.add_development_dependency('debugger')
 end
