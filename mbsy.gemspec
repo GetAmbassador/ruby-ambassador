@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name    = 'mbsy'
-  s.version = '1.0.1'
-  s.date    = '2013-02-22'
+  s.version = '1.0.2'
+  s.date    = '2013-03-28'
   s.summary = 'A Ruby wrapper for the Ambassador API'
   s.description = ''
   s.author = 'Tom Mullen, Chase Lee'
@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency("bundler", "~> 1.1.1")
   s.add_development_dependency('httparty', '~> 0.8.3')
   s.add_development_dependency('json', '~> 1.7.3')
-  s.add_development_dependency('debugger')
+  s.add_development_dependency('debugger', '~> 1.5.0')
 end
