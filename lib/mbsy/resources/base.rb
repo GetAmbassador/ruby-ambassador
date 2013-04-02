@@ -1,4 +1,6 @@
 module Mbsy
+  class RecordNotFound < Exception; end
+  class BadResponse < Exception; end
   class Base
     include HTTParty
     format :json
@@ -13,9 +15,12 @@ module Mbsy
       api_url = Mbsy.site_uri + self.element_name + '/' + method
       
       response = JSON.parse(self.get(api_url, :query => params).body)['response']
-
-      if response["code"] != '200'
-        raise "Error from Ambassador API: #{response["errors"]["error"]} (code #{response["code"]})"
+      case response['code']
+      when "200" # Nothing to do here...
+      when "404"
+        raise RecordNotFound.new(response["errors"]["error"])
+      else
+        raise BadResponse.new(response: response)
       end
 
       response['data']

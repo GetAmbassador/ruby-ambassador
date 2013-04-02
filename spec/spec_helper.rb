@@ -26,5 +26,5 @@ RSpec.configure do |config|
 end
 
 def fake_domain
-  "https://#{Mbsy.site_uri}/"
+  "#{Mbsy.site_uri}/"
 end
