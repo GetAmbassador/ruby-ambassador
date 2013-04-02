@@ -5,6 +5,7 @@ require 'mbsy/resources/ambassador'
 require 'mbsy/resources/balance'
 require 'mbsy/resources/company'
 require 'mbsy/resources/event'
+require 'mbsy/resources/group'
 require 'mbsy/resources/shortcode'
 require 'mbsy/resources/social'
 
