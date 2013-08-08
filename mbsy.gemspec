@@ -14,6 +14,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.9.2"
 
+  s.add_runtime_dependency('httparty', '~> 0.8.3')
+  s.add_runtime_dependency('json', '~> 1.7.3')
+
   s.add_development_dependency('rake', '~> 0.9.2')
   s.add_development_dependency('rspec', '~> 2.7.0')
   s.add_development_dependency('factory_girl', '~> 2.1.0')
@@ -22,7 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rb-fsevent', '~> 0.9.3')
   s.add_development_dependency("shoulda", ">= 0")
   s.add_development_dependency("bundler", "~> 1.1.1")
-  s.add_development_dependency('httparty', '~> 0.8.3')
-  s.add_development_dependency('json', '~> 1.7.3')
   s.add_development_dependency('debugger', '~> 1.5.0')
 end
