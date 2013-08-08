@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.9.2"
 
-  s.add_runtime_dependency('httparty', '~> 0.8.3')
-  s.add_runtime_dependency('json', '~> 1.7.3')
+  s.add_runtime_dependency('httparty', '>= 0.8.3')
+  s.add_runtime_dependency('json', '>= 1.7.3')
 
   s.add_development_dependency('rake', '~> 0.9.2')
   s.add_development_dependency('rspec', '~> 2.7.0')
