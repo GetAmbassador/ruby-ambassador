@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'mbsy'
-  s.version = '1.0.2'
+  s.version = '1.0.3'
   s.date    = '2013-03-28'
   s.summary = 'A Ruby wrapper for the Ambassador API'
   s.description = ''
