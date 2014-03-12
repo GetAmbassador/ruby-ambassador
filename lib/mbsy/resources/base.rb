@@ -1,6 +1,6 @@
 module Mbsy
-  class RecordNotFound < Exception; end
-  class BadResponse < Exception; end
+  class RecordNotFound < StandardError; end
+  class BadResponse < StandardError; end
   class Base
     include HTTParty
     format :json
