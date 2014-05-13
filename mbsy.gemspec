@@ -1,6 +1,11 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'mbsy/version'
+
 Gem::Specification.new do |s|
   s.name    = 'mbsy'
-  s.version = '1.0.6'
+  s.version = Mbsy::VERSION
   s.summary = 'A Ruby wrapper for the Ambassador API'
   s.description = ''
   s.author = 'Tom Mullen, Chase Lee'
