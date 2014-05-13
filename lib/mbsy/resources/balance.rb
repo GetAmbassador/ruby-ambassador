@@ -1,6 +1,5 @@
 module Mbsy
   class Balance < Base
-    
     def self.update(mode, params={})
       raise ArgumentError, "You must include :email" unless params[:email]
       raise ArgumentError, "You must include :amount" unless params[:amount]
@@ -11,6 +10,5 @@ module Mbsy
         call('deduct', params)
       end
     end
-    
   end
 end
