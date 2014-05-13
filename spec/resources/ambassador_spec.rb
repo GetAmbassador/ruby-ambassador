@@ -1,59 +1,37 @@
 require 'spec_helper'
 
 describe Mbsy::Ambassador do
+  let(:response) { double(:response) }
+  before { allow(Mbsy::Ambassador).to receive(:call).and_return(response) }
+
   describe '.find' do
-    it ''
-  end
-  
-  let(:resource_prefix) { "#{fake_domain}/ambassadors" }
-  before do
-    @existing_ambassador_response =  Mbsy::Ambassador.find(email: 'ambassador@mbsy.co', first_name: 'sigma')
+    it 'raises ArgumentError when missing email param' do
+      expect { Mbsy::Ambassador.find }.to raise_error(ArgumentError, 'You must include :email')
+      expect(Mbsy::Ambassador).to_not have_received(:call)
+    end
+
+    it 'calls #call' do
+      expect(Mbsy::Ambassador.find(email: 'a@example.com')).to eq response
+      expect(Mbsy::Ambassador).to have_received(:call).with('get', email: 'a@example.com')
+    end
   end
 
-  context 'find existing ambassador' do
-    subject { Mbsy::Ambassador.find(email: 'ambassador@mbsy.co') }
-    pending 'is an instance of Mbsy::Ambassador' do
-      expect(ambassador).to be_instance_of(Mbsy::Ambassador)
+  describe '.all' do
+    it 'calls #call' do
+      expect(Mbsy::Ambassador.all(is_active: 1)).to eq response
+      expect(Mbsy::Ambassador).to have_received(:call).with('all', is_active: 1)
     end
-    it { should be_instance_of(Hash) }
-    it { should have_key('ambassador') }
-    it { should == @existing_ambassador_response }
+  end
 
-    it 'should return an ambassador with the same email' do
-      expect(subject['ambassador']['email']).to eq(@existing_ambassador_response['ambassador']['email'])
+  describe '.stats' do
+    it 'raises ArgumentError when missing email' do
+      expect { Mbsy::Ambassador.stats }.to raise_error(ArgumentError, 'You must include :email')
+      expect(Mbsy::Ambassador).to_not have_received(:call)
+    end
+
+    it 'calls #call' do
+      expect(Mbsy::Ambassador.stats(email: 'a@example.com')).to eq response
+      expect(Mbsy::Ambassador).to have_received(:call).with('stats', email: 'a@example.com')
     end
   end
-  context 'existing ambassador not found' do
-    before do
-      # Stub out creation call since this is hitting a live service
-      stub_request(:get, "#{resource_prefix}/get/").with(query: {email: 'new_ambassador@mbsy.co', first_name: 'tester'})
-    end
-    pending 'creates the ambassador if you cannot find one' do
-      # Need a proper stubbed response before this can work
-      ambassador = Mbsy::Ambassador.find(email: 'new_ambassador@mbsy.co', first_name: 'tester')
-      expect(ambassador['ambassador']['first_name']).to eq('tester')
-    end
-    context 'failed lookup without auto-create' do
-      it "should raise a RecordNotFound error " do
-        expect{
-          Mbsy::Ambassador.find(email: 'not_found@mbsy.co', auto_create: 0)
-        }.to raise_error(Mbsy::RecordNotFound)
-      end
-    end
-  end
-  
-  it 'returns a list of all ambassadors' do
-    all_response = Mbsy::Ambassador.all
-    ambassadors = all_response['ambassadors']
-    expect(ambassadors.length).to be > 0
-    existing_ambassador_in_response = ambassadors.detect{|a| a['email'] == @existing_ambassador_response['ambassador']['email'] }
-    expect(existing_ambassador_in_response).not_to be_nil
-    expect(existing_ambassador_in_response['first_name']).to eq('sigma')
-  end
-  
-  it 'returns stats on an existing ambassador' do
-    ambassador = Mbsy::Ambassador.stats(email: 'ambassador@mbsy.co')
-    expect(ambassador['ambassador']['email']).to eq(@existing_ambassador_response['ambassador']['email'])
-  end
-   
 end
