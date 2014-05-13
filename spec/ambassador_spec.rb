@@ -10,14 +10,14 @@ describe Mbsy::Ambassador do
   context 'find existing ambassador' do
     subject { Mbsy::Ambassador.find(email: 'ambassador@mbsy.co') }
     pending 'is an instance of Mbsy::Ambassador' do
-      ambassador.should be_instance_of(Mbsy::Ambassador)
+      expect(ambassador).to be_instance_of(Mbsy::Ambassador)
     end
     it { should be_instance_of(Hash) }
     it { should have_key('ambassador') }
     it { should == @existing_ambassador_response }
 
     it 'should return an ambassador with the same email' do
-      subject['ambassador']['email'].should == @existing_ambassador_response['ambassador']['email']
+      expect(subject['ambassador']['email']).to eq(@existing_ambassador_response['ambassador']['email'])
     end
   end
   context 'existing ambassador not found' do
@@ -28,13 +28,13 @@ describe Mbsy::Ambassador do
     pending 'creates the ambassador if you cannot find one' do
       # Need a proper stubbed response before this can work
       ambassador = Mbsy::Ambassador.find(email: 'new_ambassador@mbsy.co', first_name: 'tester')
-      ambassador['ambassador']['first_name'].should eq('tester')
+      expect(ambassador['ambassador']['first_name']).to eq('tester')
     end
     context 'failed lookup without auto-create' do
       it "should raise a RecordNotFound error " do
-        lambda{
+        expect{
           Mbsy::Ambassador.find(email: 'not_found@mbsy.co', auto_create: 0)
-        }.should raise_error(Mbsy::RecordNotFound)
+        }.to raise_error(Mbsy::RecordNotFound)
       end
     end
   end
@@ -42,15 +42,15 @@ describe Mbsy::Ambassador do
   it 'returns a list of all ambassadors' do
     all_response = Mbsy::Ambassador.all
     ambassadors = all_response['ambassadors']
-    ambassadors.length.should > 0
+    expect(ambassadors.length).to be > 0
     existing_ambassador_in_response = ambassadors.detect{|a| a['email'] == @existing_ambassador_response['ambassador']['email'] }
-    existing_ambassador_in_response.should_not be_nil
-    existing_ambassador_in_response['first_name'].should == 'sigma'
+    expect(existing_ambassador_in_response).not_to be_nil
+    expect(existing_ambassador_in_response['first_name']).to eq('sigma')
   end
   
   it 'returns stats on an existing ambassador' do
     ambassador = Mbsy::Ambassador.stats(email: 'ambassador@mbsy.co')
-    ambassador['ambassador']['email'].should eq(@existing_ambassador_response['ambassador']['email'])
+    expect(ambassador['ambassador']['email']).to eq(@existing_ambassador_response['ambassador']['email'])
   end
    
 end
