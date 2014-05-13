@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Mbsy::Ambassador do
+  describe '.find' do
+    it ''
+  end
   
   let(:resource_prefix) { "#{fake_domain}/ambassadors" }
   before do
@@ -23,7 +26,7 @@ describe Mbsy::Ambassador do
   context 'existing ambassador not found' do
     before do
       # Stub out creation call since this is hitting a live service
-      FakeWeb.register_uri(:get, "#{resource_prefix}/get/", query: {email: 'new_ambassador@mbsy.co', first_name: 'tester'}, response: File.expand_path('spec/fixtures/ambassador_response_v2.json') )
+      stub_request(:get, "#{resource_prefix}/get/").with(query: {email: 'new_ambassador@mbsy.co', first_name: 'tester'})
     end
     pending 'creates the ambassador if you cannot find one' do
       # Need a proper stubbed response before this can work
