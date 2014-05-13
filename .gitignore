@@ -12,6 +12,10 @@ doc
 # bundler
 .bundle
 
+# ruby config
+.ruby-version
+.ruby-gemset
+
 # jeweler generated
 pkg
 
