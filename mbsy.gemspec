@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rspec', '~> 2.14.1')
   s.add_development_dependency('webmock', '~> 1.17.4')
   s.add_development_dependency('faker', '~> 1.3.0')
-  s.add_development_dependency("shoulda-matchers", '2.6.1')
+  s.add_development_dependency('shoulda-matchers', '2.6.1')
+  s.add_development_dependency('activesupport', '>= 3.2.18')
 end

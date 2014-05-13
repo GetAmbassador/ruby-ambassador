@@ -60,6 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (>= 3.2.18)
   byebug
   debugger
   faker (~> 1.3.0)
