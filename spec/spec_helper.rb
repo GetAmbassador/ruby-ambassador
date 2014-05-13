@@ -5,12 +5,13 @@
 #
 
 require 'mbsy'
+require 'active_support/core_ext/string/inflections'
 require 'webmock/rspec'
 WebMock.disable_net_connect! allow_localhost: true
 
 Mbsy.configure do |c|
-  c.api_key = 'test'
-  c.user_name = 'test'
+  c.api_key = 'testapikey'
+  c.user_name = 'testuser'
 end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
