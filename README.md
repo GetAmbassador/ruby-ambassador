@@ -9,7 +9,7 @@ This is a lightweight Ruby wrapper for the [Ambassador](http://getambassador.com
 Add this line to your application's Gemfile:
 
 ```
-gem 'mbsyb'
+gem 'mbsy'
 ```
 
 And then execute:
