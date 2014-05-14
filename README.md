@@ -94,6 +94,5 @@ Mbsy::Shortcode.find({ :short_code => YOURCAMPAIGNUID, :sandbox => 1 })
 
 ## Copyright
 
-Copyright (c) 2012 Tom Mullen. See LICENSE.txt for
-further details.
+Copyright (c) 2014 ZFERRAL, INC. See LICENSE for further details.
 
