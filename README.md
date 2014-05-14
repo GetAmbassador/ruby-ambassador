@@ -1,4 +1,4 @@
-# mbsy [![Gem Version](https://badge.fury.io/rb/mbsy.svg)](http://badge.fury.io/rb/mbsy)
+# mbsy [![Gem Version](https://badge.fury.io/rb/mbsy.svg)](http://badge.fury.io/rb/mbsy) [![Dependency Status](https://gemnasium.com/GetAmbassador/mbsy.svg)](https://gemnasium.com/GetAmbassador/mbsy)
 
 Ambassador API wrapper for Ruby.
 
