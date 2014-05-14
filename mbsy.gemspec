@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name    = 'mbsy'
-  s.version = '1.0.4'
-  s.date    = '2014-03-19'
+  s.version = '1.0.6'
+  s.date    = '2014-05-14'
   s.summary = 'A Ruby wrapper for the Ambassador API'
   s.description = ''
   s.author = 'Tom Mullen, Chase Lee'
