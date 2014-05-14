@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.author = 'Tom Mullen, Chase Lee'
   s.email = 'support@getambassador.com'
   s.homepage = 'http://github.com/GetAmbassador/mbsy'
+  s.license = 'MIT'
   
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
