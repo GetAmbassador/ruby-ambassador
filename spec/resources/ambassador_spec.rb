@@ -34,4 +34,21 @@ describe Mbsy::Ambassador do
       expect(Mbsy::Ambassador).to have_received(:call).with('stats', email: 'a@example.com')
     end
   end
+
+  describe '.update' do
+    it 'raises ArgumentError when missing email or uid param' do
+      expect { Mbsy::Ambassador.update }.to raise_error(ArgumentError, 'You must include :email or :uid')
+      expect(Mbsy::Ambassador).to_not have_received(:call)
+    end
+
+    it 'calls #call when passed :email' do
+      expect(Mbsy::Ambassador.update(email: 'a@example.com')).to eq response
+      expect(Mbsy::Ambassador).to have_received(:call).with('update', email: 'a@example.com')
+    end
+
+    it 'calls #call when passed :uid' do
+      expect(Mbsy::Ambassador.update(uid: 999)).to eq response
+      expect(Mbsy::Ambassador).to have_received(:call).with('update', uid: 999)
+    end
+  end
 end

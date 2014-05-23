@@ -13,5 +13,10 @@ module Mbsy
       raise ArgumentError, "You must include :email" unless params[:email]
       call('stats', params)
     end
+
+    def self.update(params={})
+      raise ArgumentError, "You must include :email or :uid" unless params[:email] || params[:uid]
+      call('update', params)
+    end
   end
 end
