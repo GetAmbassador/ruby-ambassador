@@ -11,5 +11,9 @@ module Mbsy
       raise ArgumentError, "You must include :amount" unless params[:amount]
       call('add', params)
     end
+
+    def self.all(params={})
+      call('all', params)
+    end
   end
 end

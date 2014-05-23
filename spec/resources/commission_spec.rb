@@ -4,6 +4,13 @@ describe Mbsy::Commission do
   let(:response) { double(:response) }
   before { allow(Mbsy::Commission).to receive(:call).and_return(response) }
 
+  describe '.all' do
+    it 'calls #call' do
+      expect(Mbsy::Commission.all).to eq response
+      expect(Mbsy::Commission).to have_received(:call).with('all', {})
+    end
+  end
+
   describe '.add' do
     it 'raises ArgumentError when missing email or uid param' do
       expect { Mbsy::Commission.add }.to raise_error(ArgumentError, 'You must include either :email or :uid')
