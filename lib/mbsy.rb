@@ -9,6 +9,7 @@ require 'mbsy/resources/event'
 require 'mbsy/resources/group'
 require 'mbsy/resources/shortcode'
 require 'mbsy/resources/social'
+require 'mbsy/util/single_sign_on'
 
 module Mbsy
   class << self
