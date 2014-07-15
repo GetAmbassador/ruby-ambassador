@@ -76,6 +76,12 @@ Mbsy::Shortcode.find({ :short_code => YOURCAMPAIGNUID })
 
 # Shortcode in a sandbox campaign
 Mbsy::Shortcode.find({ :short_code => YOURCAMPAIGNUID, :sandbox => 1 })
+
+# Generate HTML to embed in your page for single-sign-on
+Mbsy::SingleSignOn.embed_html(email: current_user.email)
+
+# and similarly, to logout
+Mbsy::SingleSignOn.embed_html(email: current_user.email, method: :logout)
 ```
 
 ## Contributing to mbsy
