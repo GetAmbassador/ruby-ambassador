@@ -7,5 +7,10 @@ module Mbsy
     def self.stats
       call('stats')
     end
+
+    def self.token
+      call('token')
+    end
+
   end
 end
