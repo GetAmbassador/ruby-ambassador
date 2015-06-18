@@ -1,3 +1,4 @@
+require 'cgi'
 require 'httparty'
 require 'json'
 require 'mbsy/resources/base'
