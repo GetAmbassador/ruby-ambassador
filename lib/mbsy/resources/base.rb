@@ -19,9 +19,11 @@ module Mbsy
     def self.api_url(method)
       Mbsy.site_uri + self.element_name + '/' + method
     end
- 
-    def self.call(method, params = {})
-      response = JSON.parse(self.get(api_url(method), :query => params).body)['response']
+
+    def self.call(method, params = {}, type = :get)
+      raise MbsyError.new("Unsupported type") unless (type == :get || type == :post)
+
+      response = JSON.parse(self.send(type, api_url(method), :query => params).body)['response']
       case response['code']
       when '200' # Nothing to do here...
       when '400'

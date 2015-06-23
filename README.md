@@ -43,13 +43,16 @@ end
 
 The mbsy gem will give you access to classes such as:
 
-- `Mbsy::Company`  
-- `Mbsy::Ambassador`  
+- `Mbsy::Company`
+- `Mbsy::Ambassador`
 - `Mbsy::Shortcode`
 
 Some examples:
 
 ```ruby
+# Create a new ambassador
+Mbsy::Ambassador.create(:email => 'example@example.com')
+
 # Add 50 to user account
 Mbsy::Balance.update(:add,{:email => 'example@example.com', :amount => 50})
 
