@@ -19,13 +19,13 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.9.2"
 
-  s.add_runtime_dependency('httparty', '>= 0.8.3')
-  s.add_runtime_dependency('json', '>= 1.7.3')
+  s.add_runtime_dependency('httparty', '0.14.0')
+  s.add_runtime_dependency('json', '2.0.3')
 
-  s.add_development_dependency('rake', '>= 0.9.2')
-  s.add_development_dependency('rspec', '~> 2.14.1')
-  s.add_development_dependency('webmock', '~> 1.17.4')
-  s.add_development_dependency('faker', '~> 1.3.0')
-  s.add_development_dependency('shoulda-matchers', '2.6.1')
-  s.add_development_dependency('activesupport', '>= 4.2.2')
+  s.add_development_dependency('rake', '12.0.0')
+  s.add_development_dependency('rspec', '3.5.0')
+  s.add_development_dependency('webmock', '2.3.2')
+  s.add_development_dependency('faker', '1.7.3')
+  s.add_development_dependency('shoulda-matchers', '3.1.1')
+  s.add_development_dependency('activesupport', '5.0.2')
 end
