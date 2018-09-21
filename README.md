@@ -31,6 +31,7 @@ config.gem 'mbsy'
 ```
 
 ## Usage
+__Deprecation Notice:__ The `balance` method has been deprecated as should no longer be used.
 
 Make sure you include your api credentials in an initialiser.
 
@@ -50,12 +51,6 @@ The mbsy gem will give you access to classes such as:
 Some examples:
 
 ```ruby
-# Add 50 to user account
-Mbsy::Balance.update(:add,{:email => 'example@example.com', :amount => 50})
-
-# Deduct 25 from user account
-Mbsy::Balance.update(:deduct,{:email => 'example@example.com', :amount => 25})
-
 # Get company details
 Mbsy::Company.get_details
 
