@@ -31,7 +31,7 @@ config.gem 'mbsy'
 ```
 
 ## Usage
-__Deprecation Notice:__ The `balance` method has been deprecated as should no longer be used.
+__Deprecation Notice:__ The `balance` method has been deprecated and should no longer be used.
 
 Make sure you include your api credentials in an initialiser.
 
