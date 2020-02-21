@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    mbsy (1.1.4)
+    mbsy (2.1.0)
       httparty (= 0.14.0)
-      json (= 2.0.3)
+      json (= 2.3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -33,7 +33,7 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
-    json (2.0.3)
+    json (2.3.0)
     minitest (5.10.1)
     multi_xml (0.6.0)
     public_suffix (2.0.5)
