@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('httparty', '0.14.0')
   s.add_runtime_dependency('json', '2.3.0')
 
-  s.add_development_dependency('rake', '12.0.0')
+  s.add_development_dependency('rake', '12.3.3')
   s.add_development_dependency('rspec', '3.5.0')
   s.add_development_dependency('webmock', '2.3.2')
   s.add_development_dependency('faker', '1.7.3')
